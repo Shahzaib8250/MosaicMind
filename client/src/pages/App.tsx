@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Check, Smartphone } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import { Star, Check, Smartphone, Download, Play } from "lucide-react";
 
 export default function AppPage() {
   const pricingPlans = [
@@ -86,25 +87,32 @@ export default function AppPage() {
   ];
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-app-title">
-            The AutismAlly App
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-app-subtitle">
-            Your comprehensive companion for autism support, available on iOS and Android. Designed by families, for families.
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Mobile Experience"
+        title="The"
+        highlightedText="MosaicMind App"
+        subtitle="Your comprehensive companion for autism support, available on iOS and Android. Designed by families, for families."
+        primaryButtonText="Download Now"
+        primaryButtonIcon={<Download className="mr-2 h-5 w-5" />}
+        secondaryButtonText="See Demo"
+        secondaryButtonIcon={<Play className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Mobile app interface showing autism support features"
+        testId="app-hero-section"
+      />
 
-        {/* App Overview */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* App Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6" data-testid="text-why-choose-title">
-              Why Choose AutismAlly?
+              Why Choose MosaicMind?
             </h2>
             <p className="text-gray-600 mb-6" data-testid="text-why-choose-description">
-              AutismAlly brings together everything families need to support their autism journey in one intuitive, easy-to-use mobile application. Whether you're a parent, caregiver, or professional, our app provides the tools and community support you need.
+              MosaicMind brings together everything families need to support their autism journey in one intuitive, easy-to-use mobile application. Whether you're a parent, caregiver, or professional, our app provides the tools and community support you need.
             </p>
             
             <div className="space-y-4">
@@ -217,7 +225,7 @@ export default function AppPage() {
         {/* App Store Links */}
         <div className="bg-slate-50 rounded-2xl p-8 md:p-12 mb-20">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8" data-testid="text-download-title">
-            Download AutismAlly
+            Download MosaicMind
           </h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="#" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200" data-testid="link-app-store">
@@ -296,7 +304,7 @@ export default function AppPage() {
           <div className="space-y-4">
             <Card className="border border-gray-200" data-testid="faq-free">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Is AutismAlly free to use?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Is MosaicMind free to use?</h3>
                 <p className="text-gray-600">Yes, we offer a free plan with basic features. Premium plans provide access to advanced features, unlimited resources, and professional support.</p>
               </CardContent>
             </Card>
@@ -330,7 +338,7 @@ export default function AppPage() {
             Start Your Journey Today
           </h2>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto" data-testid="text-final-cta-subtitle">
-            Join thousands of families who have found support, community, and hope through AutismAlly.
+            Join thousands of families who have found support, community, and hope through MosaicMind.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-white text-primary hover:bg-gray-100" size="lg" data-testid="button-final-download">
@@ -344,6 +352,7 @@ export default function AppPage() {
               Join Community
             </Button>
           </div>
+        </div>
         </div>
       </div>
     </div>

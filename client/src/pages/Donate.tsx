@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { 
   Heart, 
   Users, 
@@ -18,7 +20,9 @@ import {
   BookOpen,
   MessageCircle,
   Shield,
-  TrendingUp
+  TrendingUp,
+  Sparkles,
+  Gift
 } from "lucide-react";
 
 export default function Donate() {
@@ -136,20 +140,25 @@ export default function Donate() {
   };
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-donate-title">
-            Support Our Mission
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-donate-subtitle">
-            Help us continue providing essential resources, support, and community for families affected by autism. 
-            Every contribution makes a meaningful difference.
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Support Our Mission"
+        title="Support Our"
+        highlightedText="Mission"
+        subtitle="Help us continue providing essential resources, support, and community for families affected by autism. Every contribution makes a meaningful difference."
+        primaryButtonText="Donate Now"
+        primaryButtonIcon={<Gift className="mr-2 h-5 w-5" />}
+        secondaryButtonText="Volunteer"
+        secondaryButtonIcon={<Heart className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Hands coming together in support, representing community and giving"
+        testId="donate-hero-section"
+      />
 
-        {/* Impact Metrics */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Impact Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           {impactMetrics.map((metric, index) => (
             <Card key={index} className="text-center border-0 bg-slate-50" data-testid={`metric-${index}`}>
@@ -272,7 +281,7 @@ export default function Donate() {
                     Message (Optional)
                   </label>
                   <Textarea 
-                    placeholder="Share why you're supporting AutismAlly..."
+                    placeholder="Share why you're supporting MosaicMind..."
                     rows={3}
                     data-testid="textarea-message"
                   />
@@ -281,7 +290,7 @@ export default function Donate() {
                 <div className="flex items-start space-x-3">
                   <input type="checkbox" id="updates" className="mt-1" data-testid="checkbox-updates" />
                   <label htmlFor="updates" className="text-sm text-gray-600">
-                    Send me updates about AutismAlly's impact and community stories
+                    Send me updates about MosaicMind's impact and community stories
                   </label>
                 </div>
 
@@ -452,7 +461,7 @@ export default function Donate() {
                       Relevant Experience & Skills
                     </label>
                     <Textarea 
-                      placeholder="Tell us about your background, skills, and why you want to volunteer with AutismAlly..."
+                      placeholder="Tell us about your background, skills, and why you want to volunteer with MosaicMind..."
                       rows={4}
                       data-testid="textarea-volunteer-experience"
                     />
@@ -531,6 +540,7 @@ export default function Donate() {
               </CardContent>
             </Card>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { 
   Heart, 
   Star, 
@@ -15,7 +17,9 @@ import {
   Quote,
   Send,
   Camera,
-  Play
+  Play,
+  Sparkles,
+  PenTool
 } from "lucide-react";
 
 export default function Stories() {
@@ -171,19 +175,25 @@ export default function Stories() {
   });
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-stories-title">
-            Success Stories & Testimonials
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-stories-subtitle">
-            Real families, real journeys, real hope. Discover inspiring stories from our autism community.
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Success Stories"
+        title="Success Stories &"
+        highlightedText="Testimonials"
+        subtitle="Real families, real journeys, real hope. Discover inspiring stories from our autism community and share your own."
+        primaryButtonText="Share Your Story"
+        primaryButtonIcon={<PenTool className="mr-2 h-5 w-5" />}
+        secondaryButtonText="Read Stories"
+        secondaryButtonIcon={<Heart className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Happy family celebrating together, showing hope and progress"
+        testId="stories-hero-section"
+      />
 
-        {/* Search and Categories */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Search and Categories */}
         <div className="mb-12">
           <div className="flex flex-col lg:flex-row gap-6 mb-8">
             <div className="flex-1">
@@ -438,7 +448,7 @@ export default function Stories() {
                   <div className="flex items-start space-x-3">
                     <input type="checkbox" id="consent" className="mt-1" data-testid="checkbox-consent" />
                     <label htmlFor="consent" className="text-sm text-gray-600">
-                      I consent to sharing my story on the AutismAlly website and understand that it may be edited for length and clarity. 
+                      I consent to sharing my story on the MosaicMind website and understand that it may be edited for length and clarity. 
                       I can request removal at any time by contacting support.
                     </label>
                   </div>
@@ -487,6 +497,7 @@ export default function Stories() {
               Join Our Community
             </Button>
           </div>
+        </div>
         </div>
       </div>
     </div>

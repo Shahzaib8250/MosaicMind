@@ -1,8 +1,8 @@
-# AutismAlly - Autism Support Platform
+# MosaicMind - Autism Support Platform
 
 ## Overview
 
-AutismAlly is a comprehensive web application designed to support families, caregivers, and professionals working with individuals on the autism spectrum. The platform provides a centralized hub for resources, tools, community support, and educational materials to help navigate the autism journey with confidence.
+MosaicMind is a comprehensive web application designed to support families, caregivers, and professionals working with individuals on the autism spectrum. The platform provides a centralized hub for resources, tools, community support, and educational materials to help navigate the autism journey with confidence.
 
 The application features a modern React-based frontend with a clean, accessible design using Tailwind CSS and shadcn/ui components. It includes multiple content-focused pages such as educational resources, support groups, success stories, professional services, and donation capabilities. The platform is built as a full-stack application with Express.js backend infrastructure ready for future database integration and API development.
 

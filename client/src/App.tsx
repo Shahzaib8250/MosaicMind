@@ -10,6 +10,7 @@ import Features from "@/pages/Features";
 import AppPage from "@/pages/App";
 import Categories from "@/pages/Categories";
 import Blog from "@/pages/Blog";
+import BlogDetail from "@/pages/BlogDetail";
 import Resources from "@/pages/Resources";
 import Support from "@/pages/Support";
 import Services from "@/pages/Services";
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/app" component={AppPage} />
         <Route path="/categories" component={Categories} />
         <Route path="/blog" component={Blog} />
+        <Route path="/blog/:id" component={BlogDetail} />
         <Route path="/resources" component={Resources} />
         <Route path="/support" component={Support} />
         <Route path="/services" component={Services} />

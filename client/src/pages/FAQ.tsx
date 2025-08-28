@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { 
   Search, 
   ChevronDown, 
@@ -15,7 +17,9 @@ import {
   HelpCircle,
   MessageCircle,
   Phone,
-  Mail
+  Mail,
+  Sparkles,
+  LifeBuoy
 } from "lucide-react";
 
 export default function FAQ() {
@@ -36,20 +40,20 @@ export default function FAQ() {
     {
       id: 1,
       category: 'app',
-      question: 'What is AutismAlly and who is it for?',
-      answer: 'AutismAlly is a comprehensive mobile and web application designed to support families, caregivers, and professionals working with individuals on the autism spectrum. Our platform provides tools for progress tracking, educational resources, community support, and professional guidance to help navigate the autism journey with confidence.'
+      question: 'What is MosaicMind and who is it for?',
+      answer: 'MosaicMind is a comprehensive mobile and web application designed to support families, caregivers, and professionals working with individuals on the autism spectrum. Our platform provides tools for progress tracking, educational resources, community support, and professional guidance to help navigate the autism journey with confidence.'
     },
     {
       id: 2,
       category: 'app',
-      question: 'Is AutismAlly free to use?',
+      question: 'Is MosaicMind free to use?',
       answer: 'Yes, we offer a free plan that includes basic progress tracking, limited educational resources, community access, and basic notifications. We also offer Premium ($9.99/month) and Family ($19.99/month) plans with additional features like unlimited tracking, full resource library, expert support, and advanced analytics.'
     },
     {
       id: 3,
       category: 'app',
-      question: 'What age groups does AutismAlly support?',
-      answer: 'AutismAlly is designed to support individuals across the entire autism spectrum and all age groups - from early childhood (0-5 years) through adulthood (18+). Our resources and tools are categorized by age group and developmental stage to ensure relevance and effectiveness.'
+      question: 'What age groups does MosaicMind support?',
+      answer: 'MosaicMind is designed to support individuals across the entire autism spectrum and all age groups - from early childhood (0-5 years) through adulthood (18+). Our resources and tools are categorized by age group and developmental stage to ensure relevance and effectiveness.'
     },
     {
       id: 4,
@@ -61,7 +65,7 @@ export default function FAQ() {
       id: 5,
       category: 'app',
       question: 'What devices and platforms are supported?',
-      answer: 'AutismAlly is available as a mobile app for both iOS (iPhone/iPad) and Android devices, as well as a web application that works on any modern browser. All data syncs seamlessly across devices so you can access your information anywhere.'
+      answer: 'MosaicMind is available as a mobile app for both iOS (iPhone/iPad) and Android devices, as well as a web application that works on any modern browser. All data syncs seamlessly across devices so you can access your information anywhere.'
     },
     {
       id: 6,
@@ -191,19 +195,25 @@ export default function FAQ() {
   };
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-faq-title">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-faq-subtitle">
-            Find answers to common questions about AutismAlly, our features, and how we can support your autism journey.
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="FAQ"
+        title="Frequently Asked"
+        highlightedText="Questions"
+        subtitle="Find answers to common questions about MosaicMind, our features, and how we can support your autism journey."
+        primaryButtonText="Get Help"
+        primaryButtonIcon={<LifeBuoy className="mr-2 h-5 w-5" />}
+        secondaryButtonText="Browse FAQs"
+        secondaryButtonIcon={<HelpCircle className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Person seeking help and guidance, representing support and answers"
+        testId="faq-hero-section"
+      />
 
-        {/* Search Bar */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -355,6 +365,7 @@ export default function FAQ() {
               Support hours: Monday - Friday, 9 AM - 6 PM EST
             </p>
           </div>
+        </div>
         </div>
       </div>
     </div>

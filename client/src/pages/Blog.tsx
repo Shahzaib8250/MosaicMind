@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { Link } from "wouter";
 import { 
   Search, 
@@ -14,7 +16,10 @@ import {
   Brain,
   Users,
   Lightbulb,
-  Star
+  Star,
+  Sparkles,
+  BookOpen,
+  Bell
 } from "lucide-react";
 
 export default function Blog() {
@@ -104,9 +109,9 @@ export default function Blog() {
     },
     {
       id: 7,
-      title: "AutismAlly App Update: New Progress Tracking Features",
+      title: "MosaicMind App Update: New Progress Tracking Features",
       excerpt: "Discover the latest enhancements to our progress tracking system and how they can benefit your family.",
-      author: "AutismAlly Team",
+              author: "MosaicMind Team",
       date: "2024-01-01",
       category: "updates",
       categoryLabel: "App Updates",
@@ -156,19 +161,25 @@ export default function Blog() {
   });
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-blog-title">
-            AutismAlly Blog
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-blog-subtitle">
-            Expert insights, practical tips, and inspiring stories from the autism community
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Latest Articles"
+        title="MosaicMind"
+        highlightedText="Blog"
+        subtitle="Expert insights, practical tips, and inspiring stories from the autism community."
+        primaryButtonText="Subscribe"
+        primaryButtonIcon={<Bell className="mr-2 h-5 w-5" />}
+        secondaryButtonText="Browse Articles"
+        secondaryButtonIcon={<BookOpen className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Parents reading together with child, symbolizing learning and growth"
+        testId="blog-hero-section"
+      />
 
-        {/* Search and Categories */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Search and Categories */}
         <div className="mb-12">
           <div className="flex flex-col lg:flex-row gap-6 mb-8">
             <div className="flex-1">
@@ -325,6 +336,7 @@ export default function Blog() {
               Subscribe
             </Button>
           </div>
+        </div>
         </div>
       </div>
     </div>

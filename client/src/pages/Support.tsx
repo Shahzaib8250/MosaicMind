@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
+import PageHero from "@/components/PageHero";
 import { 
   Search, 
   MapPin, 
@@ -18,7 +19,8 @@ import {
   Filter,
   Video,
   Phone,
-  Mail
+  Mail,
+  Handshake
 } from "lucide-react";
 
 export default function Support() {
@@ -150,19 +152,25 @@ export default function Support() {
   });
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-support-title">
-            Support Groups & Community
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-support-subtitle">
-            Connect with families, professionals, and individuals who understand your journey
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Community Support"
+        title="Support Groups &"
+        highlightedText="Community"
+        subtitle="Connect with families, professionals, and individuals who understand your journey. Find the support you need when you need it."
+        primaryButtonText="Join Community"
+        primaryButtonIcon={<Heart className="mr-2 h-5 w-5" />}
+        secondaryButtonText="Find Groups"
+        secondaryButtonIcon={<Users className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Support group meeting with families sharing experiences"
+        testId="support-hero-section"
+      />
 
-        {/* Navigation Tabs */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Navigation Tabs */}
         <div className="flex flex-wrap justify-center mb-8 border-b border-gray-200">
           <button
             className={`px-6 py-3 font-medium transition-colors duration-200 ${
@@ -505,6 +513,7 @@ export default function Support() {
             </Card>
           </div>
         )}
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { 
   Search, 
   Download, 
@@ -16,7 +18,10 @@ import {
   Users,
   Target,
   Bookmark,
-  ExternalLink
+  ExternalLink,
+  Sparkles,
+  Library,
+  Folder
 } from "lucide-react";
 
 export default function Resources() {
@@ -195,19 +200,25 @@ export default function Resources() {
   };
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-resources-title">
-            Resource Library
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-resources-subtitle">
-            Downloadable tools, guides, and materials to support your autism journey
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Resource Library"
+        title="Resource"
+        highlightedText="Library"
+        subtitle="Downloadable tools, guides, and materials to support your autism journey. Everything you need in one organized place."
+        primaryButtonText="Browse All"
+        primaryButtonIcon={<Folder className="mr-2 h-5 w-5" />}
+        secondaryButtonText="View Library"
+        secondaryButtonIcon={<Library className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Digital library with educational resources and tools"
+        testId="resources-hero-section"
+      />
 
-        {/* Search and Filters */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Search and Filters */}
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 mb-16">
           <div className="flex flex-col lg:flex-row gap-4 mb-6">
             <div className="flex-1">
@@ -391,6 +402,7 @@ export default function Resources() {
               </Card>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </div>

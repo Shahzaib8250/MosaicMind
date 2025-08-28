@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { Link } from "wouter";
 import { 
   Heart, 
@@ -14,7 +15,9 @@ import {
   FileText,
   Video,
   Calendar,
-  MessageCircle
+  MessageCircle,
+  Folder,
+  Library
 } from "lucide-react";
 
 export default function Categories() {
@@ -73,7 +76,7 @@ export default function Categories() {
       id: "guides",
       title: "App Guides & Tutorials",
       icon: <Video className="h-8 w-8" />,
-      description: "How-to guides and tutorials for using AutismAlly features",
+      description: "How-to guides and tutorials for using MosaicMind features",
       color: "bg-indigo-50 hover:bg-indigo-100",
       iconBg: "bg-indigo-500",
       count: 54,
@@ -92,19 +95,25 @@ export default function Categories() {
   const therapyTypes = ["ABA", "Speech", "Occupational", "Physical", "Social Skills", "Behavioral"];
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-categories-title">
-            Resource Categories
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-categories-subtitle">
-            Explore our comprehensive collection of autism resources organized by category and type
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Explore Resources"
+        title="Resource"
+        highlightedText="Categories"
+        subtitle="Explore our comprehensive collection of autism resources organized by category and type to find exactly what you need."
+        primaryButtonText="Browse All"
+        primaryButtonIcon={<Folder className="mr-2 h-5 w-5" />}
+        secondaryButtonText="View Library"
+        secondaryButtonIcon={<Library className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Organized library of resources and educational materials"
+        testId="categories-hero-section"
+      />
 
-        {/* Search and Filter Section */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Search and Filter Section */}
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 mb-16">
           <div className="flex flex-col lg:flex-row gap-4 mb-6">
             <div className="flex-1">
@@ -308,6 +317,7 @@ export default function Categories() {
               </CardContent>
             </Card>
           </Link>
+        </div>
         </div>
       </div>
     </div>

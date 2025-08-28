@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import PageHero from "@/components/PageHero";
 import { 
   Calendar, 
   Clock, 
@@ -18,7 +20,10 @@ import {
   Heart,
   Shield,
   Phone,
-  Mail
+  Mail,
+  Sparkles,
+  Stethoscope,
+  BookOpen
 } from "lucide-react";
 
 export default function Services() {
@@ -197,19 +202,25 @@ export default function Services() {
   };
 
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-services-title">
-            Professional Services
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="text-services-subtitle">
-            Expert consultation, assessment, and training services to support your autism journey
-          </p>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <PageHero
+        badge="Professional Services"
+        title="Professional"
+        highlightedText="Services"
+        subtitle="Expert consultation, assessment, and training services to support your autism journey with licensed professionals."
+        primaryButtonText="Book Consultation"
+        primaryButtonIcon={<BookOpen className="mr-2 h-5 w-5" />}
+        secondaryButtonText="View Services"
+        secondaryButtonIcon={<Stethoscope className="mr-2 h-5 w-5" />}
+        imageSrc="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+        imageAlt="Professional consultation session with autism specialist"
+        testId="services-hero-section"
+      />
 
-        {/* Services Grid */}
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {services.map((service) => (
             <Card key={service.id} className="hover:shadow-lg transition-shadow duration-200" data-testid={`service-${service.id}`}>
@@ -446,6 +457,7 @@ export default function Services() {
               <p className="font-semibold text-accent">Your privacy is protected</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

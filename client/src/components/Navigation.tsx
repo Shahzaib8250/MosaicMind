@@ -42,7 +42,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0" data-testid="link-logo">
-              <span className="text-2xl font-bold text-primary">AutismAlly</span>
+              <span className="text-2xl font-bold text-primary">MosaicMind</span>
             </Link>
           </div>
 
